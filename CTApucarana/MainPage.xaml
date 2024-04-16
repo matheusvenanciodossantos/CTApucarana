@@ -1,9 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CTApucarana.MainPage">
+             x:Class="CTApucarana.MainPage"
+             Shell.NavBarIsVisible="false">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>   
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="150"/>
+            <ColumnDefinition Width ="150"/>
+            <ColumnDefinition Width ="150"/>
+        </Grid.ColumnDefinitions>
+            
+     <Frame x:name="FrameDoTempo"
+            HeightRequest="150"
+            BackgroundColor="#60ffffff"
+            CornerRadius="25"
+            BorderColor="Black"
+            VerticalOptions="Center"
+            Grid.RowSpan="2">
+     </Frame>
+
 
 
        
-
+    </Grid>
 </ContentPage>

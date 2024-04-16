@@ -16,16 +16,20 @@ public double rain {get; set;}
 public string sunrise {get; set;}
 
 public string sunset {get; set;}
+[JsonPropertyName("wind_speedy")]
+public string windSpeedy {get; set;}
+[JsonPropertyName("wind_direction")]
 
-public string wind_speedy {get; set;}
+public int windDirection {get; set;}
+[JsonPropertyName("moon_phase")]
 
-public int wind_direction {get; set;}
+public string moonPhase {get; set;}
+[JsonPropertyName("img_id")]
 
-public string moon_phase {get; set;}
+public string imgId {get; set;}
+[JsonPropertyName("condition_code")]
 
-public string img_id {get; set;}
-
-public string condition_code {get; set;}
+public string conditionCode {get; set;}
 
 public string currently {get; set;}
 
