@@ -9,7 +9,7 @@ public string description {get; set;}
 
 public string city {get; set;}
 
-public int humidity {get; set;}
+public double humidity {get; set;}
 
 public double rain {get; set;}
 
@@ -20,7 +20,7 @@ public string sunset {get; set;}
 public string windSpeedy {get; set;}
 [JsonPropertyName("wind_direction")]
 
-public int windDirection {get; set;}
+public string windDirection {get; set;}
 [JsonPropertyName("moon_phase")]
 
 public string moonPhase {get; set;}
