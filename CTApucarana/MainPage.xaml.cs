@@ -30,6 +30,7 @@ public partial class MainPage : ContentPage
 				Resultados.moonPhase="Nov";
 				Resultados.cloudness=10;
 				Resultados.windCardinal="Leste";
+				Resltados.currently;
 
 			}
 
@@ -47,6 +48,18 @@ public partial class MainPage : ContentPage
 				//labelWindCardinal.text=Resultados.windCardinal;
 				FaseDaLua.Text= Resultados.moonPhase;
 				//labelCloudness.text= Resultados.cloudness;
+
+				Rain.Text=Resultados.rain.ToString();
+					if(Resultados.currently=="dia")
+					{
+						if (Resultados.Rain>=10)
+							background.Source = "chuva.jpg";
+						else if (Resultados.cloudness>=10)
+							background.Source="nublado.jpg";
+						else
+							bacground.Source="diaclaro.jpg";
+
+					}
 			}
 	
 
