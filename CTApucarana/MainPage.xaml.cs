@@ -1,8 +1,28 @@
-﻿namespace CTApucarana;
+﻿using System.Text.Json;
+
+namespace CTApucarana;
 
 public partial class MainPage : ContentPage
 {
+	const string url="https://api.hgbrasil.com/weather?woeid=455927&key=4e5acb36";
 	Results Resultados;
+	async void UpdateTime()
+    {
+            try
+            {
+                var HttpClient = new HttpClient();
+                var Response = await HttpClient.GetAsync(url);
+                if (Response.IsSuccessStatusCode)
+                    {
+                        var content = await Response.Content.ReadAsStringAsync();
+                        Resultados = JsonSerializer.Deserialize<Results>(content);
+                    }
+            }
+            catch(Exception e)
+            {
+				//Erro
+            }
+    }
 
 
 
@@ -30,15 +50,15 @@ public partial class MainPage : ContentPage
 				Resultados.moonPhase="Nov";
 				Resultados.cloudness=10;
 				Resultados.windCardinal="Leste";
-				Resltados.currently;
+				Resultados.currently="Dia";
 
 			}
 
 		void PreencherTela()
 			{
-				Temperatura.Text= Resultados.temp.ToString();
+				Labeltemp.Text = Resultados.temp.ToString();
 				//Ceu.Text= Resultados.description;
-				//Cidade.Text= Resultados.city;
+				Cidade.Text= Resultados.city;
 				Rain.Text= Resultados.rain.ToString();
 				Umidade.Text= Resultados.humidity.ToString();
 				HoraDoAmanhecer.Text= Resultados.sunrise;
@@ -52,12 +72,12 @@ public partial class MainPage : ContentPage
 				Rain.Text=Resultados.rain.ToString();
 					if(Resultados.currently=="dia")
 					{
-						if (Resultados.Rain>=10)
+						if (Resultados.rain>=10)
 							background.Source = "chuva.jpg";
 						else if (Resultados.cloudness>=10)
 							background.Source="nublado.jpg";
 						else
-							bacground.Source="diaclaro.jpg";
+							background.Source="diaclaro.jpg";
 
 					}
 			}
