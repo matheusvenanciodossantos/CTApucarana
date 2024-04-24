@@ -25,7 +25,7 @@
                Grid.RowSpan="4"
                Grid.ColumnSpan="3"/>
 
-       <Frame x:Name="FrameDotempo"
+       <Frame x:Name="framedotempo"
               HeightRequest="170"
               BackgroundColor="#80000000"
               CornerRadius="20"
@@ -36,7 +36,7 @@
 
               <Grid>
 
-              <Label x:Name="Labeltemp"
+              <Label x:Name="labeltemp"
                      TextColor="White"
                      FontSize="50"
                      VerticalOptions="Start"
@@ -51,7 +51,7 @@
                      FontAttributes="Bold"
                      Margin="0,10,0,0"/>
 
-               <Label x:Name="Cidade"
+               <Label x:Name="cidade"
                      TextColor="White"
                      FontSize="11"
                      VerticalOptions="End"
@@ -66,7 +66,7 @@
 
        </Frame>
 
-              <Frame x:Name="FrameDaChuva"
+              <Frame x:Name="framedachuva"
                      HeightRequest="80"
                      BackgroundColor="#80000000"
                      CornerRadius="20"
@@ -90,7 +90,7 @@
                             VerticalOptions="Center"
                             HorizontalOptions="Start"/>
                      
-                     <Label x:Name="Rain"
+                     <Label x:Name="rain"
                             TextColor="White"
                             FontSize="8"
                             VerticalOptions="Center"
@@ -102,7 +102,7 @@
                             VerticalOptions="End"
                             HorizontalOptions="Start"/>
                      
-                     <Label x:Name="Umidade"
+                     <Label x:Name="umidade"
                             TextColor="White"
                             FontSize="10"
                             VerticalOptions="End"
@@ -136,7 +136,7 @@
                          VerticalOptions="Center"
                          HorizontalOptions="Start"/>
 
-                 <Label x:Name="HoraDoAmanhecer"
+                 <Label x:Name="horadoamanhecer"
                          TextColor="White"
                          FontSize="10"
                          VerticalOptions="Center"
@@ -148,7 +148,7 @@
                          VerticalOptions="End"
                          HorizontalOptions="Start"/> 
 
-                <Label x:Name="HoraDoAnoitecer"
+                <Label x:Name="horadoanoitecer"
                          TextColor="White"
                          FontSize="10"
                          VerticalOptions="End"
@@ -157,7 +157,7 @@
                </VerticalStackLayout>  
             </Frame>
 
-              <Frame x:Name="FrameDoVento "
+              <Frame x:Name="framedovento "
                      HeightRequest="80"
                      BackgroundColor="#80000000"
                      CornerRadius="20"
@@ -181,7 +181,7 @@
                          VerticalOptions="Center"
                          HorizontalOptions="Start"/>
 
-                 <Label x:Name="ForcaDoVento"
+                 <Label x:Name="forcadovento"
                          TextColor="White"
                          FontSize="10"
                          VerticalOptions="Center"
@@ -193,7 +193,7 @@
                          VerticalOptions="End"
                          HorizontalOptions="Start"/>
 
-                 <Label x:Name="DirecaoDoVento"
+                 <Label x:Name="direcaodovento"
                          TextColor="White"
                          FontSize="10"
                          VerticalOptions="End"
@@ -226,7 +226,7 @@
                          VerticalOptions="Center"
                          HorizontalOptions="Start"/>
 
-                 <Label x:Name="FaseDaLua"
+                 <Label x:Name="fasedalua"
                          TextColor="White"
                          FontSize="10"
                          VerticalOptions="Center"
@@ -236,7 +236,7 @@
                </VerticalStackLayout>  
             </Frame>
 
-            <Frame x:Name="FrameFinal"
+            <Frame x:Name="framefinal"
                HeightRequest="140"
                BackgroundColor="#80000000"
                CornerRadius="20"

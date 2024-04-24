@@ -5,7 +5,8 @@ namespace CTApucarana;
 public partial class MainPage : ContentPage
 {
 	const string url="https://api.hgbrasil.com/weather?woeid=455927&key=4e5acb36";
-	Results Resultados;
+	Results results;
+	Resposta resposta;
 	async void UpdateTime()
     {
             try
@@ -15,8 +16,10 @@ public partial class MainPage : ContentPage
                 if (Response.IsSuccessStatusCode)
                     {
                         var content = await Response.Content.ReadAsStringAsync();
-                        Resultados = JsonSerializer.Deserialize<Results>(content);
-                    }
+                        resposta = JsonSerializer.Deserialize<Resposta>(content);
+					}
+						PreencherTela();
+			
             }
             catch(Exception e)
             {
@@ -30,58 +33,60 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 
-		 Resultados = new Results();
+		 
 		 LayoutTest();
 		 PreencherTela();
+		 UpdateTime();
 
 	}
 	
 		void LayoutTest()
 			{
-				Resultados.temp=21;
-				Resultados.description="Nublado";
-				Resultados.city="Apucarana-PR";
-				Resultados.humidity=88;
-				Resultados.rain=88.2;
-				Resultados.sunrise="6:22";
-				Resultados.sunset="18:44";
-				Resultados.windSpeed="Norte";
-				Resultados.windDirection=300;
-				Resultados.moonPhase="Nov";
-				Resultados.cloudness=10;
-				Resultados.windCardinal="Leste";
-				Resultados.currently="Dia";
+				resposta.temp=21;
+				resposta.description="Nublado";
+				resposta.city="Apucarana-PR";
+				resposta.humidity=88;
+				resposta.rain=88.2;
+				resposta.sunrise="6:22";
+				resposta.sunset="18:44";
+				resposta.windSpeed="Norte";
+				resposta.windDirection=300;
+				resposta.moonPhase="Nov";
+				resposta.cloudness=10;
+				resposta.windCardinal="Leste";
+				resposta.currently="Dia";
 
 			}
 
 		void PreencherTela()
 			{
-				Labeltemp.Text = Resultados.temp.ToString();
-				//Ceu.Text= Resultados.description;
-				Cidade.Text= Resultados.city;
-				Rain.Text= Resultados.rain.ToString();
-				Umidade.Text= Resultados.humidity.ToString();
-				HoraDoAmanhecer.Text= Resultados.sunrise;
-				HoraDoAnoitecer.Text= Resultados.sunset;
-				ForcaDoVento.Text= Resultados.windSpeed.ToString();
-				DirecaoDoVento.Text= Resultados.windDirection.ToString();
-				//labelWindCardinal.text=Resultados.windCardinal;
-				FaseDaLua.Text= Resultados.moonPhase;
-				//labelCloudness.text= Resultados.cloudness;
-
-				Rain.Text=Resultados.rain.ToString();
-					if(Resultados.currently=="dia")
+				Labeltemp.Text = resposta.temp.ToString();
+				//Ceu.Text= resposta.description;
+				Cidade.Text= resposta.city;
+				Rain.Text= resposta.rain.ToString();
+				Umidade.Text= resposta.humidity.ToString();
+				HoraDoAmanhecer.Text= resposta.sunrise;
+				HoraDoAnoitecer.Text= resposta.sunset;
+				ForcaDoVento.Text= resposta.windSpeed.ToString();
+				DirecaoDoVento.Text= resposta.windDirection.ToString();
+				//labelWindCardinal.text=resposta.windCardinal;
+				FaseDaLua.Text= resposta.moonPhase;
+				//labelCloudness.text= resposta.cloudness;
+                Rain.Text=resposta.rain.ToString();
+					
+					
+					if(resposta.currently=="dia")
 					{
-						if (Resultados.rain>=10)
-							background.Source = "chuva.jpg";
-						else if (Resultados.cloudness>=10)
-							background.Source="nublado.jpg";
+						if (resposta.rain>=10)
+							background.Source = "diachuva.jpg";
+						else if (resposta.cloudness>=10)
+							background.Source="dianublado.jpg";
 						else
-							background.Source="diaclaro.jpg";
+							background.Source="dia.jpg";
 
 					}
-			}
-	
+			
 
 
+	}
 }
