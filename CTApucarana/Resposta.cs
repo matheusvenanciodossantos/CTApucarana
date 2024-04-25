@@ -1,5 +1,5 @@
 namespace CTApucarana;
-public class Resposta : Results
+public class Resposta
 {
 public Results results {get;  set;}
 }
