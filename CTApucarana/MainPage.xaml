@@ -35,10 +35,12 @@
               Margin="10">
 
               <Grid>
-                       <Grid.RowDefinitions>
+                     <Grid.RowDefinitions>
                      <RowDefinition Height="100"/>
                      <RowDefinition Height="70"/>
-                       </Grid.RowDefinitions>             
+                     </Grid.RowDefinitions>      
+                     
+                     
                        
               <Label x:Name="Labeltemp"
                      TextColor="White"
@@ -60,8 +62,8 @@
                <Label x:Name="Cidade"
                      TextColor="White"
                      FontSize="11"
-                     VerticalOptions="End"
-                     HorizontalOptions="Center"
+                     
+                     HorizontalOptions="Start"
                      FontAttributes="Bold"
                      Grid.Row="1"
                      />
@@ -74,6 +76,8 @@
 
        </Frame>
 
+                       
+
               <Frame x:Name="framedachuva"
                      HeightRequest="80"
                      BackgroundColor="#80000000"
@@ -85,8 +89,10 @@
 
                      <Grid>
                        <Grid.RowDefinitions>
-                     <RowDefinition Height="85"/>
-                     <RowDefinition Height="85"/>
+                     <RowDefinition Height="20"/>
+                     <RowDefinition Height="20"/>
+                     <RowDefinition Height="20"/>
+                     <RowDefinition Height="20"/>
                        </Grid.RowDefinitions>
 
 
@@ -95,31 +101,37 @@
                             FontSize="11"
                             VerticalOptions="Start"
                             HorizontalOptions="Center"
-                            FontAttributes="Bold"/>
+                            FontAttributes="Bold"
+                            Margin="0,0,0,0"
+                            Grid.Row="0"/>
 
                      <Label Text="Chuva:"
                             TextColor="White"
                             FontSize="8"
                             VerticalOptions="Center"
-                            HorizontalOptions="Start"/>
+                            HorizontalOptions="Start"
+                            Grid.Row="1"/>
                      
                      <Label x:Name="Rain"
                             TextColor="White"
                             FontSize="8"
                             VerticalOptions="Center"
-                            HorizontalOptions="End"/>
+                            HorizontalOptions="Center"
+                            Grid.Row="1"/>
 
                      <Label Text="Umidade:"
                             TextColor="White"
                             FontSize="10"
                             VerticalOptions="End"
-                            HorizontalOptions="Start"/>
+                            HorizontalOptions="Start"
+                            Grid.Row="2"/>
                      
                      <Label x:Name="Umidade"
                             TextColor="White"
                             FontSize="10"
                             VerticalOptions="End"
-                            HorizontalOptions="End"/>
+                            HorizontalOptions="End"
+                            Grid.Row="2"/>
 
               </Grid>  
 
