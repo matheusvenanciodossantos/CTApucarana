@@ -38,7 +38,9 @@
                      <Grid.RowDefinitions>
                      <RowDefinition Height="100"/>
                      <RowDefinition Height="70"/>
-                     </Grid.RowDefinitions>      
+                     </Grid.RowDefinitions>   
+                                          
+                        
                      
                      
                        
@@ -83,17 +85,22 @@
                      BackgroundColor="#80000000"
                      CornerRadius="20"
                      VerticalOptions="Center"
+                     Padding="0"
                      Grid.Row="1"
                      Grid.Column="1"
                      Margin="5">
 
                      <Grid>
                        <Grid.RowDefinitions>
-                     <RowDefinition Height="20"/>
+                     <RowDefinition Height="*"/>
                      <RowDefinition Height="20"/>
                      <RowDefinition Height="20"/>
                      <RowDefinition Height="20"/>
                        </Grid.RowDefinitions>
+                       <Grid.ColumnDefinitions>
+                     <ColumnDefinition Width="*"/>
+                     <ColumnDefinition Width="*"/>
+                     </Grid.ColumnDefinitions>
 
 
                      <Label Text="Chuva"
@@ -102,22 +109,24 @@
                             VerticalOptions="Start"
                             HorizontalOptions="Center"
                             FontAttributes="Bold"
-                            Margin="0,0,0,0"
+                            Margin="0,5,0,0"
                             Grid.Row="0"/>
 
                      <Label Text="Chuva:"
                             TextColor="White"
-                            FontSize="8"
+                            FontSize="10"
                             VerticalOptions="Center"
                             HorizontalOptions="Start"
-                            Grid.Row="1"/>
+                            Grid.Row="1"
+                            Grid.Column="0"/>
                      
                      <Label x:Name="Rain"
                             TextColor="White"
                             FontSize="8"
                             VerticalOptions="Center"
-                            HorizontalOptions="Center"
-                            Grid.Row="1"/>
+                            HorizontalOptions="Start"
+                            Grid.Row="1"
+                            Grid.Column="1"/>
 
                      <Label Text="Umidade:"
                             TextColor="White"
@@ -141,6 +150,7 @@
                      HeightRequest="80"
                      BackgroundColor="#80000000"
                      CornerRadius="20"
+                     Padding="0"
                      VerticalOptions="Center"
                      Grid.Row="2"
                      Grid.Column="1"
@@ -190,6 +200,7 @@
                      HeightRequest="80"
                      BackgroundColor="#80000000"
                      CornerRadius="20"
+                     Padding="0"
                      VerticalOptions="Center"
                      Grid.Row="1"
                      Grid.Column="2"
@@ -239,6 +250,7 @@
                HeightRequest="80"
                BackgroundColor="#80000000"
                CornerRadius="20"
+               Padding="0"
                VerticalOptions="Center"
                Grid.Row="2"
                Grid.Column="2"
@@ -278,6 +290,7 @@
                HeightRequest="140"
                BackgroundColor="#80000000"
                CornerRadius="20"
+               Padding="0"
                HorizontalOptions="Fill"
                VerticalOptions="End"
                Grid.Row="3"
