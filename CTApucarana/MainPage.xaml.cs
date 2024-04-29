@@ -43,7 +43,7 @@ public partial class MainPage : ContentPage
 		void PreencherTela()
 			{
 				Labeltemp.Text = resposta.results.temp.ToString();
-				//Ceu.Text= resposta.results.description;
+				Ceu.Text= resposta.results.description;
 				Cidade.Text= resposta.results.city;
 				Rain.Text= resposta.results.rain.ToString();
 				Umidade.Text= resposta.results.humidity.ToString();
@@ -51,10 +51,31 @@ public partial class MainPage : ContentPage
 				HoraDoAnoitecer.Text= resposta.results.sunset;
 				ForcaDoVento.Text= resposta.results.windSpeed.ToString();
 				DirecaoDoVento.Text= resposta.results.windDirection.ToString();
-				//labelWindCardinal.text=resposta.results.windCardinal;
 				FaseDaLua.Text= resposta.results.moonPhase;
-				//labelCloudness.text= resposta.results.cloudness;
-                
+
+						 if (resposta.results.moonPhase=="new")
+							FaseDaLua.Text = "Nova";
+
+							else if (resposta.results.moonPhase=="first_quarter ")
+								FaseDaLua.Text = "Quarto Crescente";
+
+								else if (resposta.results.moonPhase=="waxing_gibbous ")
+									FaseDaLua.Text = "Crescente";
+									
+									else if (resposta.results.moonPhase=="full ")
+										FaseDaLua.Text = "Cheia";
+											
+											else if (resposta.results.moonPhase=="waning_gibbous  ")
+												FaseDaLua.Text = "Gibosa Minguante";
+
+												else if (resposta.results.moonPhase=="last_quarter   ")
+													FaseDaLua.Text = "Quarto minguante";
+
+														else if (resposta.results.moonPhase=="waning_crescent ")
+													FaseDaLua.Text = "Lua minguante";
+
+												
+
 					
 					
 					if (resposta.results.currently=="dia")
@@ -75,9 +96,7 @@ public partial class MainPage : ContentPage
 						else
 							background.Source="noiteestrelada.png";
 					}
+					
 			}
-			
-
-
-	}
+		}
 
